@@ -31,7 +31,7 @@ def home():
         #     "Jin is also known as that “third guy from the left”",
         #     "Jin was an exchange student in Australia",
         # ], 
-        util.read_file('jin.txt'),
+        util.read_file('/Users/harialapati/Documents/hello_flask/jin.txt'),
 
         # Suga
         # [
@@ -41,59 +41,63 @@ def home():
         #     "Suga stage names Suga and Agust D,",
         #     "Suga's liconic line is 'In my next life I want to be born as a rock'"
         # ],
-        util.read_file('suga.txt'),
+        util.read_file('/Users/harialapati/Documents/hello_flask/suga.txt'),
 
 
         # "J-Hope"
-        [
-            "J-Hope is the Sunshine of the group",
-            "J-Hope is the main dancer of the group",
-            "J-Hope's iconic line is 'I’m your hope, you’re my hope, I’m Jhope'",
-            "J-Hope was a member of the street dance group NEURON.",
-            "J-Hope’s motto is “If you don’t work hard, you’ll never get results”."
-        ],
+        # [
+            # "J-Hope is the Sunshine of the group",
+            # "J-Hope is the main dancer of the group",
+            # "J-Hope's iconic line is 'I’m your hope, you’re my hope, I’m Jhope'",
+            # "J-Hope was a member of the street dance group NEURON.",
+            # "J-Hope’s motto is “If you don’t work hard, you’ll never get results”."
+        # ],
+        util.read_file('/Users/harialapati/Documents/hello_flask/J-hope.txt'),
 
         # RM
-        [
-            "RM is also known as the God of Destruction",
-            "RM is the Leader of the group",
-            "RM favourite singer was Nas",
-            "RM studied in New Zealand and lived there for 6 months.",
-            "RM's iconic line is 'Jimin. You got no jams'"
-        ],
-
+        # [
+        #     "RM is also known as the God of Destruction",
+        #     "RM is the Leader of the group",
+        #     "RM favourite singer was Nas",
+        #     "RM studied in New Zealand and lived there for 6 months.",
+        #     "RM's iconic line is 'Jimin. You got no jams'"
+        # ],
+        util.read_file('/Users/harialapati/Documents/hello_flask/RM.txt'),
 
         # Jimin
-        [
-            "Jimin's iconic line is 'Lachimolala'",
-            "Jimin is famous for little pinky",
-            "Jimin is the shortest in the group",
-            "In the dorm, Jimin is in charge of the kitchen.",
-            "Jimin was ranked 64 places in the “Top 100 Handsome Faces of 2017”",
-            "When Jimin laughs he either falls on someone or disappears"
-        ],
+        # [
+        #     "Jimin's iconic line is 'Lachimolala'",
+        #     "Jimin is famous for little pinky",
+        #     "Jimin is the shortest in the group",
+        #     "In the dorm, Jimin is in charge of the kitchen.",
+        #     "Jimin was ranked 64 places in the “Top 100 Handsome Faces of 2017”",
+        #     "When Jimin laughs he either falls on someone or disappears"
+        # ],
+        util.read_file('/Users/harialapati/Documents/hello_flask/Jimin.txt'),
 
         # V
-        [
-            "V's nic name is Tae Tae",
-            "V always thinks out of the box",
-            "V is also called called an alien",
-            "V's iconic line is'I'm a GOOD Boy'",
-            "V knows how to play the saxophone",
-            "V dedicated his win at Music Bank to his Grandma",
-            "V is ambidextrous, that is he can write with both hands."
-        ],
+        # [
+        #     "V's nic name is Tae Tae",
+        #     "V always thinks out of the box",
+        #     "V is also called called an alien",
+        #     "V's iconic line is'I'm a GOOD Boy'",
+        #     "V knows how to play the saxophone",
+        #     "V dedicated his win at Music Bank to his Grandma",
+        #     "V is ambidextrous, that is he can write with both hands."
+        # ],
+        util.read_file('/Users/harialapati/Documents/hello_flask/V.txt'),
 
         # Jungkook
-        [
-            "Jungkook is known as Golden Maknae",
-            "Jungkook is good at everything",
-            "Jungkook knows Taekwondo",
-            "Jungkook’s favorite color is black ",
-            "Jungkook iconic line is 'start stage, uh…my heart boom boom'",
-            "Jungkook's other nicknames are 'Jeon Jungkookie or Kookie'",
-            "When Jungkook was younger, he used to want to be a badminton player"
-        ]
+        # [
+        #     "Jungkook is known as Golden Maknae",
+        #     "Jungkook is good at everything",
+        #     "Jungkook knows Taekwondo",
+        #     "Jungkook’s favorite color is black ",
+        #     "Jungkook iconic line is 'start stage, uh…my heart boom boom'",
+        #     "Jungkook's other nicknames are 'Jeon Jungkookie or Kookie'",
+        #     "When Jungkook was younger, he want to be a badminton player"
+        # ]
+        util.read_file('/Users/harialapati/Documents/hello_flask/Jungkook.txt')
     ]
 
     rand_no = random.randint(0, len(bts_members)-1)

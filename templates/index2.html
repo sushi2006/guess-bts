@@ -27,16 +27,16 @@
     .frame {
             width: 400px;
             height: 500px;
-            border: 3px solid rgb(0, 0, 0);
-            background: rgb(230, 142, 142);
+            border: 3px solid rgb(122, 38, 172);
+            background: rgb(123, 2, 194);
             margin: auto;
             padding: 15px 10px;
         }
 
         .button {
-            background-color: #000000; /* Green */
+            background-color: #000000c7; /* Green */
             border: none;
-            color: white;
+            color: rgb(177, 158, 55);
             padding: 15px 32px;
             text-align: center;
             text-decoration: none;
@@ -74,8 +74,8 @@
         <br>
     
         <button class="button" onClick="window.location.reload();">Guess Next</button>
-        <button class="button" >player1 +</button>
-        <button class="button" >player2 +</button>
+        <button class="button" onClick="onClick()" >player1 +</button>
+        <button class="button" onClick="onClick1()" >player2 +</button>
     </div>
     <div class="col-md-6">
         <table>
@@ -86,12 +86,12 @@
             </tr>
             <tr>
               <td>{{game_players[0]}}</td>
-              <td>5</td>
+              <td ><a id ='clicks'>0</a></td>
               
             </tr>
             <tr>
               <td>{{game_players[1]}}</td>
-              <td>3</td>
+              <td ><a id ='clicks1'>0</a></td>
               
             </tr>
           
@@ -104,6 +104,16 @@
     
   </div>
 </div>
-
+<script>  
+var clicks = 0;
+    function onClick() {
+        clicks += 1;
+        document.getElementById("clicks").innerHTML = clicks;
+    };
+    var clicks1 = 0;
+    function onClick1() {
+        clicks1 += 1;
+        document.getElementById("clicks1").innerHTML = clicks1;
+    };</script>
 </body>
 </html>

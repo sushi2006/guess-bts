@@ -1,16 +1,33 @@
+
+
+'''
+Created on 
+
+Course work: 
+    Python for BTS Army
+    
+@author: BTS Army Colonel Suchita
+
+Source:
+    
+'''
+
+# Import necessary modules
+
 from os import name
 from typing import cast
-from flask import Flask
+from flask import Flask, jsonify
 from flask import render_template
 import json
 import random
 import util
 
-app = Flask(__name__)
-@app.route("/")
+# Local import
+from const import *
 
-def home():
-    # return "Hello, Flask!"
+app = Flask(__name__)
+
+def _get_random_bias():
 
     bts_members = [
         "Jin", 
@@ -21,6 +38,7 @@ def home():
         "V",
         "Jungkook"
     ]
+
     bts_members_info = [
 
         # Jin
@@ -31,7 +49,7 @@ def home():
         #     "Jin is also known as that “third guy from the left”",
         #     "Jin was an exchange student in Australia",
         # ], 
-        util.read_file('/Users/harialapati/Documents/hello_flask/jin.txt'),
+        util.read_file(f'{BASE_DIR_PATH}jin.txt'),
 
         # Suga
         # [
@@ -41,7 +59,7 @@ def home():
         #     "Suga stage names Suga and Agust D,",
         #     "Suga's liconic line is 'In my next life I want to be born as a rock'"
         # ],
-        util.read_file('/Users/harialapati/Documents/hello_flask/suga.txt'),
+        util.read_file(f'{BASE_DIR_PATH}suga.txt'),
 
 
         # "J-Hope"
@@ -52,7 +70,7 @@ def home():
             # "J-Hope was a member of the street dance group NEURON.",
             # "J-Hope’s motto is “If you don’t work hard, you’ll never get results”."
         # ],
-        util.read_file('/Users/harialapati/Documents/hello_flask/J-hope.txt'),
+        util.read_file(f'{BASE_DIR_PATH}J-hope.txt'),
 
         # RM
         # [
@@ -62,7 +80,7 @@ def home():
         #     "RM studied in New Zealand and lived there for 6 months.",
         #     "RM's iconic line is 'Jimin. You got no jams'"
         # ],
-        util.read_file('/Users/harialapati/Documents/hello_flask/RM.txt'),
+        util.read_file(f'{BASE_DIR_PATH}RM.txt'),
 
         # Jimin
         # [
@@ -73,7 +91,7 @@ def home():
         #     "Jimin was ranked 64 places in the “Top 100 Handsome Faces of 2017”",
         #     "When Jimin laughs he either falls on someone or disappears"
         # ],
-        util.read_file('/Users/harialapati/Documents/hello_flask/Jimin.txt'),
+        util.read_file(f'{BASE_DIR_PATH}Jimin.txt'),
 
         # V
         # [
@@ -85,7 +103,7 @@ def home():
         #     "V dedicated his win at Music Bank to his Grandma",
         #     "V is ambidextrous, that is he can write with both hands."
         # ],
-        util.read_file('/Users/harialapati/Documents/hello_flask/V.txt'),
+        util.read_file(f'{BASE_DIR_PATH}V.txt'),
 
         # Jungkook
         # [
@@ -97,7 +115,7 @@ def home():
         #     "Jungkook's other nicknames are 'Jeon Jungkookie or Kookie'",
         #     "When Jungkook was younger, he want to be a badminton player"
         # ]
-        util.read_file('/Users/harialapati/Documents/hello_flask/Jungkook.txt')
+        util.read_file(f'{BASE_DIR_PATH}Jungkook.txt')
     ]
 
     rand_no = random.randint(0, len(bts_members)-1)
@@ -112,6 +130,13 @@ def home():
 
     member_info = current_member_info_list[info_random_no]
 
+    return member_info, member, img_no, rand_no
+
+@app.route("/")
+def home():
+    
+    member_info, member, img_no, rand_no = _get_random_bias()
+
     players = util.get_players()
     return render_template(
         'index2.html', 
@@ -122,6 +147,21 @@ def home():
         current_rand_no = rand_no,
         game_players = players
     )
+
+@app.route("/random/bias")
+def get_random_bias():
+
+    member_info, member, img_no, rand_no = _get_random_bias()
+
+    result_dict = {
+        'current_member_info' : member_info,
+        'member' : member,
+        'img_no' : img_no,
+        'rand_no' : rand_no,
+        'current_image' : f'static/bts_{member}_{img_no}.jpeg',
+    }
+
+    return jsonify(result_dict)
 
 @app.route('/flag')
 def get_flag():

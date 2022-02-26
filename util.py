@@ -4,6 +4,9 @@
 from fileinput import filename
 
 
+# Local import
+from const import *
+
 def read_file(filename):
 
     file1 = open(filename,'r')
@@ -15,42 +18,42 @@ def read_file(filename):
 
 def get_content(singer_name):
     if (singer_name == "jin"):
-        file_name = "/Users/harialapati/Documents/hello_flask/jin.txt"
+        file_name = f"{BASE_DIR_PATH}jin.txt"
         print('worldwide handsome')
         read_file(file_name)
 
     elif(singer_name == "suga"):
-        file_name = "/Users/harialapati/Documents/hello_flask/suga.txt"
+        file_name = f"{BASE_DIR_PATH}suga.txt"
         print('meow-meow')
         read_file(file_name)
 
     elif(singer_name == "J-hope"):
-        file_name = "/Users/harialapati/Documents/hello_flask/J-hope.txt"
+        file_name = f"{BASE_DIR_PATH}j-hope.txt"
         print('Hope')
         read_file(file_name)
 
     elif(singer_name == "RM"):
-        file_name = "/Users/harialapati/Documents/hello_flask/RM.txt"
+        file_name = f"{BASE_DIR_PATH}RM.txt"
         print('Rap Monster')
         read_file(file_name)
 
     elif(singer_name == "Jimin"):
-        file_name = "/Users/harialapati/Documents/hello_flask/Jimin.txt"
+        file_name = f"{BASE_DIR_PATH}jimin.txt"
         print('chim chim')
         read_file(file_name)
 
     elif(singer_name == "V"):
-        file_name = "/Users/harialapati/Documents/hello_flask/V.txt"
+        file_name = f"{BASE_DIR_PATH}V.txt"
         print('tae tae')
         read_file(file_name)
 
     elif(singer_name == "Jungkook"):
-        file_name = "/Users/harialapati/Documents/hello_flask/Jungkook.txt"
+        file_name = f"{BASE_DIR_PATH}jungkook.txt"
         print('kookie')
         read_file(file_name)
 
 def get_players():
-    return read_file('/Users/harialapati/Documents/hello_flask/players.txt')
+    return read_file(f'{BASE_DIR_PATH}players.txt')
 
 
 if __name__== "__main__":
@@ -62,31 +65,31 @@ if __name__== "__main__":
 
 if __name__== "__main__":
     print('bts')
-    file_name = "/Users/harialapati/Documents/hello_flask/suga.txt"
+    file_name = "{BASE_DIR_PATH}suga.txt"
     get_content('suga')
     
 if __name__== "__main__":
     print('bts')
-    file_name = "/Users/harialapati/Documents/hello_flask/J-hope.txt"
+    file_name = f"{BASE_DIR_PATH}j-hope.txt"
     get_content('J-hope')
     
 if __name__== "__main__":
     print('bts')
-    file_name = "/Users/harialapati/Documents/hello_flask/RM.txt"
+    file_name = "{BASE_DIR_PATH}RM.txt"
     get_content('RM')
     
 if __name__== "__main__":
     print('bts')
-    file_name = "/Users/harialapati/Documents/hello_flask/Jimin.txt"
+    file_name = f"{BASE_DIR_PATH}jimin.txt"
     get_content('Jimin')
     
 if __name__== "__main__":
     print('bts')
-    file_name = "/Users/harialapati/Documents/hello_flask/V.txt"
+    file_name = "{BASE_DIR_PATH}V.txt"
     get_content('V')
     
 if __name__== "__main__":
     print('bts')
-    file_name = "/Users/harialapati/Documents/hello_flask/Jungkook.txt"
+    file_name = f"{BASE_DIR_PATH}jungkook.txt"
     get_content('Jungkook')
     

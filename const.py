@@ -4,7 +4,7 @@ Created on
 
 Course work: 
     Python for BTS Army
-
+    
 @author: BTS Army Colonel Suchita
 
 Source:
@@ -13,9 +13,7 @@ Source:
 
 # Import necessary modules
 
-# Local import
-from const import *
+# BASE_DIR_PATH = '/Users/harialapati/Documents/hello_flask/'
+BASE_DIR_PATH = ''
 
-file1 = open(f"{BASE_DIR_PATH}suchita.txt",'r')
-lines = file1.readlines()
-print (lines)
+

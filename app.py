@@ -6,7 +6,7 @@ Created on
 Course work: 
     Python for BTS Army
     
-@author: BTS Army Colonel Suchita
+@author: BTS Army Colonel Suchi
 
 Source:
     

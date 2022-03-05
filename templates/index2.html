@@ -60,7 +60,9 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-        Member: {{current_bias}}
+        Member:
+        <div id="bias">
+        {{member}}</div>
         <!-- number: {{current_number}} -->
         <br>
         <br>
@@ -71,8 +73,8 @@
     
         <br>
         <br>
-    
-        {{current_member_info}}
+        <div id = "info">
+        {{current_member_info}}</div>
     
         <br>
         <br>
@@ -138,21 +140,30 @@
                         'src',
                         data['current_image']
                     );
+                    $('#bias').html(
+                      data['member']
+                      
+                    );
+                    $('#info').html(
+                      data['current_member_info']
+                    );
+
+                  
                 }
             });
         }
     });
 
-// var clicks = 0;
-//     function onClick() {
-//         clicks += 1;
-//         document.getElementById("clicks").innerHTML = clicks;
-//     };
-//     var clicks1 = 0;
-//     function onClick1() {
-//         clicks1 += 1;
-//         document.getElementById("clicks1").innerHTML = clicks1;
-//     };
+var clicks = 0;
+    function onClick() {
+        clicks += 1;
+        document.getElementById("clicks").innerHTML = clicks;
+    };
+    var clicks1 = 0;
+    function onClick1() {
+        clicks1 += 1;
+        document.getElementById("clicks1").innerHTML = clicks1;
+    };
 
 
 </script>

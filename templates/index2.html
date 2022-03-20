@@ -19,13 +19,16 @@
     }
     
     td, th {
-      border: 1px solid #dddddd;
+      border: 1px solid #000000;
       text-align: left;
       padding: 8px;
     }
     
     tr:nth-child(even) {
-      background-color: #dddddd;
+      background-color: #6aeea1;
+    }
+    tr:nth-child(3) {
+      background-color: #6aeeee;
     }
 
     .frame {
@@ -60,20 +63,23 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-        Member:
-        <div id="bias">
-        {{current_bias}}</div>
+        
         <!-- number: {{current_number}} -->
         <br>
         <br>
     
         <div class="frame">
             <img src="{{current_image}}" height="400" id="bts_bias_img">
+            
         </div>
     
         <br>
         <br>
+      
+        <div id="bias" style="font-size:45px;">
+        {{current_bias}}</div>
         <div id = "info">
+         
         {{current_member_info}}</div>
     
         <br>
@@ -92,12 +98,12 @@
             </tr>
             <tr>
               <td>{{game_players[0]}}</td>
-              <td ><a id ='clicks'>0</a></td>
+              <td ><a id ='clicks' style="color: black;">0</a></td>
               
             </tr>
             <tr>
               <td>{{game_players[1]}}</td>
-              <td ><a id ='clicks1'>0</a></td>
+              <td ><a id ='clicks1' style="color: black;">0</a></td>
               
             </tr>
           

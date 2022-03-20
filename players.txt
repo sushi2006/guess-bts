@@ -1,2 +1,2 @@
-HS
-IE
+player/team 1
+player/team 2

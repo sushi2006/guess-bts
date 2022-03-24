@@ -165,7 +165,7 @@ def get_random_bias():
 
 @app.route('/flag')
 def get_flag():
-    rand_no = random.randint(0, 3)
+    rand_no = random.randint(0, 8)
     return render_template(
         'index2.html', 
         my_no = rand_no,

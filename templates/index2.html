@@ -25,10 +25,10 @@
     }
     
     tr:nth-child(even) {
-      background-color: #6aeea1;
+      background-color: #ec6363;
     }
     tr:nth-child(3) {
-      background-color: #6aeeee;
+      background-color: #fa4d4d;
     }
 
     .frame {
@@ -88,6 +88,8 @@
         <button class="button" id="next_btn">Guess Next</button>
         <button class="button" onClick="onClick()" >player1 +</button>
         <button class="button" onClick="onClick1()" >player2 +</button>
+        <button class="button" onClick="onClick1()" >player3 +</button>
+        <button class="button" onClick="onClick1()" >player4 +</button>
     </div>
     <div class="col-md-6">
         <table>
@@ -103,6 +105,18 @@
             </tr>
             <tr>
               <td>{{game_players[1]}}</td>
+              <td ><a id ='clicks1' style="color: black;">0</a></td>
+              
+            </tr>
+
+            <tr>
+              <td>{{game_players[2]}}</td>
+              <td ><a id ='clicks1' style="color: black;">0</a></td>
+              
+            </tr>
+
+            <tr>
+              <td>{{game_players[3]}}</td>
               <td ><a id ='clicks1' style="color: black;">0</a></td>
               
             </tr>
@@ -169,6 +183,16 @@ var clicks = 0;
     function onClick1() {
         clicks1 += 1;
         document.getElementById("clicks1").innerHTML = clicks1;
+    };
+    var clicks1 = 0;
+    function onClick1() {
+        clicks1 += 1;
+        document.getElementById("clicks1").innerHTML = clicks2;
+    };
+    var clicks1 = 0;
+    function onClick1() {
+        clicks1 += 1;
+        document.getElementById("clicks1").innerHTML = clicks3;
     };
 
 

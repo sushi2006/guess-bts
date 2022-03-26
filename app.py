@@ -120,7 +120,7 @@ def _get_random_bias():
 
     rand_no = random.randint(0, len(bts_members)-1)
 
-    img_no = random.randint(0,3)
+    img_no = random.randint(0,8)
 
     member = bts_members[rand_no]
 

@@ -147,7 +147,7 @@
           </table>
           <div id="mainstopwatch">
             <div class="maintime">
-            <span id="mainminute">00</span>
+            <!-- <span id="mainminute">00</span> -->
         <span id="mainsecond">00</span>
         <span id="milliseconds">00</span>
         </div><br>
@@ -229,7 +229,7 @@ var clicks = 0;
     var timerInterval;
     var ms = document.getElementById('milliseconds');
     var second = document.getElementById('mainsecond');
-    var minute = document.getElementById('mainminute');
+    // var minute = document.getElementById('mainminute');
 
   
 function start(){
@@ -238,7 +238,7 @@ function start(){
      timer += 1/60;
     msVal = Math.floor((timer - Math.floor(timer) )*100); // Gives the milliseconds value
      secondVal = Math.floor(timer) - Math.floor(timer/60) *60; // Gives the Second values
-    minuteVal = Math.floor(timer/60); // Gives the Minute value
+    minuteVal = Math.floor(timer/60); // Gives the Minute value 
     ms.textContent = msVal <10 ? "0" + msVal.toString() : msVal;
      second.textContent = secondVal < 10 ? "0" + secondVal.toString() : secondVal;
      minute.textContent = minuteVal < 10 ? "0" + minuteVal.toString() : minuteVal;

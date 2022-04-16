@@ -118,6 +118,7 @@ def _get_random_bias():
         util.read_file(f'{BASE_DIR_PATH}Jungkook.txt')
     ]
 
+    # rand_no = random.randint(0,1)
     rand_no = random.randint(0, len(bts_members)-1)
 
     img_no = random.randint(0,8)

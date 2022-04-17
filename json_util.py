@@ -11,11 +11,12 @@ Mentors:
 
 import random
 import json
+from const import *
 
 FILEPATH = 'score.json'
 
-CURRENT_GAME_INDEX = "192001"
-DEFAULT_SCORE = 5
+# CURRENT_GAME_INDEX = "192001"
+# DEFAULT_SCORE = 5
 
 def get_json_data():
 
@@ -76,11 +77,11 @@ def startpy():
     # print(current_game_score_dict)
 
     # test1: adding player 1 score by 5
-    increase_score(
-        CURRENT_GAME_INDEX,
-        2, 
-        5
-    )
+    # increase_score(
+    #     CURRENT_GAME_INDEX,
+    #     2, 
+    #     5
+    # )
 
     pass
 

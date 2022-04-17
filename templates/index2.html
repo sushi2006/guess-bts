@@ -106,8 +106,9 @@
         <br>
     
         <button class="button" id="next_btn">Guess Next</button><br><br>
-        <button class="button" onClick="onClick()" >player1 +</button>
-        <button class="button" onClick="onClick1()" >player2 +</button>
+        <button class="button increase_score" data-player-id="1"  >player1 +</button>
+        <button class="button increase_score" data-player-id="2"  >player2 +</button>
+        <button class="button increase_score" data-player-id="3"  >player3 +</button>
         <!-- <button class="button" onClick="onClick2()" >player3 +</button>
         <button class="button" onClick="onClick3()" >player4 +</button> -->
     </div>
@@ -202,28 +203,58 @@
                 }
             });
         }
+
+        $("button.increase_score" ).click(function() {
+            // 
+
+            var playerId = $(this).attr("data-player-id");
+            // console.log('increase_score : ', playerId);
+
+            increaseScore(playerId);
+
+            // get the player index
+        });
+
+        // increaseScore
+        function increaseScore(playerIndex){
+            console.log('increaseScore : ', playerIndex);
+
+            // call AJAX
+            url = "/increase/player/"+playerIndex+"/score"
+            $.ajax({
+                type: "GET",
+                url: url,
+                success: function (data) {
+                    // $("#resultarea").text(data);
+                    console.log(data);                  
+                }
+            });
+        }
     });
 
-var clicks = 0;
-    function onClick() {
-        clicks += 1;
-        document.getElementById("clicks").innerHTML = clicks;
-    };
-    var clicks1 = 0;
-    function onClick1() {
-        clicks1 += 1;
-        document.getElementById("clicks1").innerHTML = clicks1;
-    };
-    var clicks2 = 0;
-    function onClick2() {
-        clicks2 += 1;
-        document.getElementById("clicks2").innerHTML = clicks2;
-    };
-    var clicks3 = 0;
-    function onClick3() {
-        clicks3 += 1;
-        document.getElementById("clicks3").innerHTML = clicks3;
-    };
+    // var clicks = 0;
+    // function onClick() {
+    //     clicks += 1;
+    //     document.getElementById("clicks").innerHTML = clicks;
+    // };
+
+    // var clicks1 = 0;
+    // function onClick1() {
+    //     clicks1 += 1;
+    //     document.getElementById("clicks1").innerHTML = clicks1;
+    // };
+
+    // var clicks2 = 0;
+    // function onClick2() {
+    //     clicks2 += 1;
+    //     document.getElementById("clicks2").innerHTML = clicks2;
+    // };
+
+    // var clicks3 = 0;
+    // function onClick3() {
+    //     clicks3 += 1;
+    //     document.getElementById("clicks3").innerHTML = clicks3;
+    // };
 
     // var scores = {}
     // scores.player1 = clicks;
@@ -231,7 +262,7 @@ var clicks = 0;
     // scores.player3 = clicks2;
     // scores.player4 = clicks3;
     // console.log(scores);
-    console.log(clicks)
+    // console.log(clicks);
     var timer = 0;
     var timerInterval;
     var ms = document.getElementById('milliseconds');

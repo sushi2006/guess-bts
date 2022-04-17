@@ -24,6 +24,7 @@ import util
 
 # Local import
 from const import *
+import json_util as jungutil
 
 app = Flask(__name__)
 
@@ -164,8 +165,25 @@ def get_random_bias():
 
     return jsonify(result_dict)
 
+@app.route("/increase/player/<player_index>/score")
+def increase_player_score(player_index):
+
+    # 
+    jungutil.increase_score(
+        CURRENT_GAME_INDEX,
+        player_index,
+        DEFAULT_SCORE
+    )
+
+    result_dict = {
+        'error_code' : 0
+    }
+
+    return jsonify(result_dict)
+
 @app.route('/flag')
 def get_flag():
+
     rand_no = random.randint(0, 8)
     return render_template(
         'index2.html', 

@@ -121,12 +121,17 @@
             </tr>
             <tr>
               <td>{{game_players[0]}}</td>
-              <td ><a id ='clicks' style="color: rgb(0, 0, 0);">0</a></td>
+              <td id="player_1_score_box" >
+                  <!-- <a id ='clicks' style="color: rgb(0, 0, 0);">0</a> -->
+                  
+             </td>
               
             </tr>
             <tr>
               <td>{{game_players[1]}}</td>
-              <td ><a id ='clicks1' style="color: rgb(0, 0, 0);">0</a></td>
+              <td id="player_2_score_box">
+
+              </td>
               
             </tr>
 
@@ -212,6 +217,8 @@
 
             increaseScore(playerId);
 
+
+
             // get the player index
         });
 
@@ -226,7 +233,12 @@
                 url: url,
                 success: function (data) {
                     // $("#resultarea").text(data);
-                    console.log(data);                  
+                    console.log(data);
+                    
+                    playerNewScore = data['player_new_score'];
+
+                    // player_2_score_box
+                    $("td#player_"+playerIndex+"_score_box" ).html(playerNewScore);
                 }
             });
         }

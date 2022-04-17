@@ -169,14 +169,16 @@ def get_random_bias():
 def increase_player_score(player_index):
 
     # 
-    jungutil.increase_score(
+    player_new_score = jungutil.increase_score(
         CURRENT_GAME_INDEX,
         player_index,
         DEFAULT_SCORE
     )
 
     result_dict = {
-        'error_code' : 0
+        'error_code' : 0,
+        'player_index' : player_index,
+        'player_new_score' : player_new_score,
     }
 
     return jsonify(result_dict)

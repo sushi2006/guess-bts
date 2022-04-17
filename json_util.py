@@ -71,6 +71,8 @@ def increase_score(game_index, player_index, score = DEFAULT_SCORE):
 
     store_json_data(full_score_json)
 
+    return current_player_score
+
 def startpy():
 
     # current_game_score_dict = get_current_game(CURRENT_GAME_INDEX)

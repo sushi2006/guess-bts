@@ -118,9 +118,10 @@ def _get_random_bias():
         util.read_file(f'{BASE_DIR_PATH}Jungkook.txt')
     ]
 
+    # rand_no = random.randint(0,1)
     rand_no = random.randint(0, len(bts_members)-1)
 
-    img_no = random.randint(0,3)
+    img_no = random.randint(0,8)
 
     member = bts_members[rand_no]
 
@@ -165,7 +166,7 @@ def get_random_bias():
 
 @app.route('/flag')
 def get_flag():
-    rand_no = random.randint(0, 3)
+    rand_no = random.randint(0, 8)
     return render_template(
         'index2.html', 
         my_no = rand_no,

@@ -5,7 +5,7 @@
         https://api.jquery.com/click/
     -->
 <head>
-  <title>How well do you know BTS(Bangtan Sonyeondan)????</title>
+  <title>Guess the next member???</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -19,13 +19,19 @@
     }
     
     td, th {
-      border: 1px solid #dddddd;
+      border: 1px solid #6f00ff;
       text-align: left;
       padding: 8px;
     }
     
     tr:nth-child(even) {
-      background-color: #dddddd;
+      background-color: #ffff;
+    }
+    tr:nth-child(3) {
+      background-color: #ffff;
+    }
+    tr:nth-child(5) {
+      background-color: #ffff;
     }
 
     .frame {
@@ -47,6 +53,23 @@
             display: inline-block;
             font-size: 16px;
         }
+
+        body {
+          font-family: arial;
+          background: #e0e0e0;
+  }
+        #mainstopwatch{
+          width: 300px;
+
+          margin: 100px auto;
+          padding: 60px 50px 100px;
+          text-align: center;
+          font-size: 30px;
+          border-radius: 38px;
+          box-shadow: 6px -6px 8px #9d9d9d,
+          -6px 6px 8px #ffffff;
+  }
+
     </style>
     
 </head>
@@ -54,34 +77,39 @@
 
 <div class="jumbotron text-center">
   <h1>Bangtan Sonyeondan</h1>
-  <p>How well do you know BTS????</p> 
+  <p>How well do you know BTS?</p> 
 </div>
   
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-        Member:
-        <div id="bias">
-        {{current_bias}}</div>
+        
         <!-- number: {{current_number}} -->
         <br>
         <br>
     
         <div class="frame">
             <img src="{{current_image}}" height="400" id="bts_bias_img">
+            
         </div>
     
         <br>
         <br>
+      
+        <div id="bias" style="font-size:45px;">
+        {{current_bias}}</div>
         <div id = "info">
+         
         {{current_member_info}}</div>
     
         <br>
         <br>
     
-        <button class="button" id="next_btn">Guess Next</button>
+        <button class="button" id="next_btn">Guess Next</button><br><br>
         <button class="button" onClick="onClick()" >player1 +</button>
         <button class="button" onClick="onClick1()" >player2 +</button>
+        <!-- <button class="button" onClick="onClick2()" >player3 +</button>
+        <button class="button" onClick="onClick3()" >player4 +</button> -->
     </div>
     <div class="col-md-6">
         <table>
@@ -92,20 +120,42 @@
             </tr>
             <tr>
               <td>{{game_players[0]}}</td>
-              <td ><a id ='clicks'>0</a></td>
+              <td ><a id ='clicks' style="color: rgb(0, 0, 0);">0</a></td>
               
             </tr>
             <tr>
               <td>{{game_players[1]}}</td>
-              <td ><a id ='clicks1'>0</a></td>
+              <td ><a id ='clicks1' style="color: rgb(0, 0, 0);">0</a></td>
               
+            </tr>
+
+            <!-- <tr>
+              <td>{{game_players[2]}}</td>
+              <td ><a id ='clicks2' style="color: rgb(0, 0, 0);">0</a></td>
+              
+            </tr>
+
+            <tr>
+              <td>{{game_players[3]}}</td>
+              <td ><a id ='clicks3' style="color: rgb(0, 0, 0);">0</a></td>
+               -->
             </tr>
           
           
           
           
           </table>
-          
+          <div id="mainstopwatch">
+            <div class="maintime">
+            <!-- <span id="mainminute">00</span> -->
+        <span id="mainsecond">00</span>
+        <span id="milliseconds">00</span>
+        </div><br>
+
+    <button id="start" onclick="start();">Start</button>
+    <button id="stop" onclick="stop();">Stop</button>
+    <button id="stop" onclick="reset();" style="margin-top: 15px;">Reset</button>
+        </div>    
     </div>
     
   </div>
@@ -164,6 +214,54 @@ var clicks = 0;
         clicks1 += 1;
         document.getElementById("clicks1").innerHTML = clicks1;
     };
+    var clicks2 = 0;
+    function onClick2() {
+        clicks2 += 1;
+        document.getElementById("clicks2").innerHTML = clicks2;
+    };
+    var clicks3 = 0;
+    function onClick3() {
+        clicks3 += 1;
+        document.getElementById("clicks3").innerHTML = clicks3;
+    };
+
+    // var scores = {}
+    // scores.player1 = clicks;
+    // scores.player2 = clicks1;
+    // scores.player3 = clicks2;
+    // scores.player4 = clicks3;
+    // console.log(scores);
+    console.log(clicks)
+    var timer = 0;
+    var timerInterval;
+    var ms = document.getElementById('milliseconds');
+    var second = document.getElementById('mainsecond');
+    // var minute = document.getElementById('mainminute');
+
+  
+function start(){
+  stop();
+  timerInterval = setInterval( function(){
+     timer += 1/60;
+    msVal = Math.floor((timer - Math.floor(timer) )*100); // Gives the milliseconds value
+     secondVal = Math.floor(timer) - Math.floor(timer/60) *60; // Gives the Second values
+    minuteVal = Math.floor(timer/60); // Gives the Minute value 
+    ms.textContent = msVal <10 ? "0" + msVal.toString() : msVal;
+     second.textContent = secondVal < 10 ? "0" + secondVal.toString() : secondVal;
+     minute.textContent = minuteVal < 10 ? "0" + minuteVal.toString() : minuteVal;
+  }, 1000/60);
+
+}
+function stop(){
+  clearInterval(timerInterval);
+}
+function reset(){
+    stop();
+    timer = 0;
+    ms.textContent = '00';
+    second.textContent = '00';
+    minute.textContent = '00';
+  }
 
 
 </script>

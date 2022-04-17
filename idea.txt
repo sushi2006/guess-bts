@@ -1,9 +1,23 @@
-keep more pics
+keep more pics (done)
 add the voice of the member
 a bit of the songs about 10 more seconds
-bar that shows points
-leader board
+bar that shows points (done)
+leader board (done)
 levels - difficulty (eyes....)
-names to the photos
+names to the photos(done)
 rewards
-personal info
+personal info (done)
+
+
+march 20, 22
+name should be Big (done)
+add more players(done)
+add some gifs
+
+
+april 10, 22
+add timer(done)
+hints about the next member
+
+april 17, 22
+save scores in a database

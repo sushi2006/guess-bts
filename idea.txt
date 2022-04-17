@@ -16,5 +16,8 @@ add some gifs
 
 
 april 10, 22
-add timer
+add timer(done)
 hints about the next member
+
+april 17, 22
+save scores in a database

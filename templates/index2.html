@@ -64,7 +64,7 @@
           margin: 100px auto;
           padding: 60px 50px 100px;
           text-align: center;
-          font-size: 40px;
+          font-size: 30px;
           border-radius: 38px;
           box-shadow: 6px -6px 8px #9d9d9d,
           -6px 6px 8px #ffffff;
@@ -108,8 +108,8 @@
         <button class="button" id="next_btn">Guess Next</button><br><br>
         <button class="button" onClick="onClick()" >player1 +</button>
         <button class="button" onClick="onClick1()" >player2 +</button>
-        <button class="button" onClick="onClick2()" >player3 +</button>
-        <button class="button" onClick="onClick3()" >player4 +</button>
+        <!-- <button class="button" onClick="onClick2()" >player3 +</button>
+        <button class="button" onClick="onClick3()" >player4 +</button> -->
     </div>
     <div class="col-md-6">
         <table>
@@ -129,7 +129,7 @@
               
             </tr>
 
-            <tr>
+            <!-- <tr>
               <td>{{game_players[2]}}</td>
               <td ><a id ='clicks2' style="color: rgb(0, 0, 0);">0</a></td>
               
@@ -138,7 +138,7 @@
             <tr>
               <td>{{game_players[3]}}</td>
               <td ><a id ='clicks3' style="color: rgb(0, 0, 0);">0</a></td>
-              
+               -->
             </tr>
           
           
@@ -154,7 +154,7 @@
 
     <button id="start" onclick="start();">Start</button>
     <button id="stop" onclick="stop();">Stop</button>
-    <button id="stop" onclick="reset();">Reset</button>
+    <button id="stop" onclick="reset();" style="margin-top: 15px;">Reset</button>
         </div>    
     </div>
     
@@ -225,6 +225,13 @@ var clicks = 0;
         document.getElementById("clicks3").innerHTML = clicks3;
     };
 
+    // var scores = {}
+    // scores.player1 = clicks;
+    // scores.player2 = clicks1;
+    // scores.player3 = clicks2;
+    // scores.player4 = clicks3;
+    // console.log(scores);
+    console.log(clicks)
     var timer = 0;
     var timerInterval;
     var ms = document.getElementById('milliseconds');

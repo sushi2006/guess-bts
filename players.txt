@@ -1,2 +1,2 @@
-player/team 1
-player/team 2
+Chaaya
+Suchita

@@ -1,0 +1,6 @@
+hello my name is suchita. i have been learning python for 4 months. python is a very intersting coding language.
+my experience in this field was interesting and fun at the same time i was learning a lot of things about this coding language.
+it is like an extra language to learn outside of school in the free time. we made this game because of my friends and my mentors who are fans of bts.
+so this is a simple guessing game. in this game you just have to guess who the next member is going to come.
+there is also some info about the bts member who is currently there.
+i had alot of fun making this game and also i would like to do more projects like this in the future. 

@@ -24,6 +24,7 @@ import util
 
 # Local import
 from const import *
+import json_util as jungutil
 
 app = Flask(__name__)
 
@@ -118,9 +119,10 @@ def _get_random_bias():
         util.read_file(f'{BASE_DIR_PATH}Jungkook.txt')
     ]
 
+    # rand_no = random.randint(0,1)
     rand_no = random.randint(0, len(bts_members)-1)
 
-    img_no = random.randint(0,3)
+    img_no = random.randint(0,8)
 
     member = bts_members[rand_no]
 
@@ -163,9 +165,28 @@ def get_random_bias():
 
     return jsonify(result_dict)
 
+@app.route("/increase/player/<player_index>/score")
+def increase_player_score(player_index):
+
+    # 
+    player_new_score = jungutil.increase_score(
+        CURRENT_GAME_INDEX,
+        player_index,
+        DEFAULT_SCORE
+    )
+
+    result_dict = {
+        'error_code' : 0,
+        'player_index' : player_index,
+        'player_new_score' : player_new_score,
+    }
+
+    return jsonify(result_dict)
+
 @app.route('/flag')
 def get_flag():
-    rand_no = random.randint(0, 3)
+
+    rand_no = random.randint(0, 8)
     return render_template(
         'index2.html', 
         my_no = rand_no,
@@ -173,4 +194,8 @@ def get_flag():
     )
 
 if __name__== "__main__":
-    app.run(host="0.0.0.0", debug = True, port = 5003)
+    app.run(
+        host = "0.0.0.0", 
+        debug = True, 
+        port = 5003
+    )

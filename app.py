@@ -122,7 +122,7 @@ def _get_random_bias():
     # rand_no = random.randint(0,1)
     rand_no = random.randint(0, len(bts_members)-1)
 
-    img_no = random.randint(0,8)
+    img_no = random.randint(0,12)
 
     member = bts_members[rand_no]
 
@@ -186,7 +186,7 @@ def increase_player_score(player_index):
 @app.route('/flag')
 def get_flag():
 
-    rand_no = random.randint(0, 8)
+    rand_no = random.randint(0, 12)
     return render_template(
         'index2.html', 
         my_no = rand_no,

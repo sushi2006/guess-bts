@@ -38,15 +38,14 @@ ENGINE = MergeTree()
 PRIMARY KEY (name,info);
 
 INSERT INTO BTS.RM ( name, info) VALUES
-( 'Jin', 'Jin was born on December 4' ),
-( 'Jin', 'His nickname is worldwide handsome' ),
-( 'Jin', 'Jin is the mom of the group' )
-( 'Jin', 'Jin is also known as that “third guy from the left”' )
-( 'Jin', 'Jin was an exchange student in Australia' )
-( 'Jin', 'Jin is a vocalist and a visual in BTS.' )
-( 'Jin', 'Jin plays the piano and the pipe organ. In 2018, he sang and played piano simultaneously for the song “Epiphany.”' )
-( 'Jin', 'Jin had two sugar gliders, Eomuk and Odeng. Both names come from Korean words for fish cakes.' )
-( 'Jin', 'He is close friends with B1A4’s Sandeul and VIXX’s Ken, and they are all the same age.' )
-( 'Jin', 'The first album Jin bought with his own money was Girls’ Generation’s “Gee.”' )
-( 'Jin', '' )
+( 'Jin', '' ),
+( 'Jin', '' ),
+( 'Jin', '' ),
+( 'Jin', '' ),
+( 'Jin', '' ),
+( 'Jin', '' ),
+( 'Jin', '' ),
+( 'Jin', '' ),
+( 'Jin', '' ),
+( 'Jin', '' ),
 SELECT * FROM BTS.RM
